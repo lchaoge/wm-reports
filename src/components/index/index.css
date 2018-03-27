@@ -1,0 +1,287 @@
+.reports-view-index-index .box-hd{
+    padding: 0px 0 1px 0px;
+    font-size: 13px;
+    margin-top: 43px;
+    background-color: #f8f8f8;
+    -o-margin-top: 63px;
+}
+.reports-view-index-index .box-hd .notice{
+    height:26px;
+    line-height:26px;
+    background-color: rgba(254,277,136 ,.5);
+    padding: 0 10px;
+    color: #444;
+    border-top:1px solid #d7d7d7;
+}
+.reports-view-index-index .box-hd .notice .title{
+    margin-left: 5px;
+    color: #222222;
+}
+
+.reports-view-index-index .box-hd .dept-type{
+    margin: 0 10px;
+    color: #03A9F5;
+    line-height: 30px;
+    height:30px;
+    position: relative;
+}
+.reports-view-index-index .box-hd .dept-type .saleDate{
+    position: absolute;
+    top:0;
+    right:0px;
+}
+.reports-view-index-index .box-hd .dept-type .selectDpt{
+    background: url("./images/arr_down.png") no-repeat right center;
+    background-size: 12px auto;
+    color: #03A9F5;
+    padding-right: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+
+}
+.reports-view-index-index .box-hd .date{
+    padding-left: 36px;
+    line-height: 22px;
+    margin: 10px 10px 0 10px;
+}
+.reports-view-index-index .box-hd .sale{
+    background: url("./images/sale.png") no-repeat;
+    background-size: 30px auto;
+}
+.reports-view-index-index .box-hd .comp{
+    background: url("./images/comp.png") no-repeat;
+    background-size: 30px auto;
+}
+.reports-view-index-index .box-hd .datetime{
+    text-align: right;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 10px;
+    position: relative;
+}
+.reports-view-index-index .box-hd .bit{
+    position: absolute;
+    left:0px;
+    margin: 0 10px;
+}
+
+.reports-view-index-index .item{
+    /*min-height:61px;*/
+    border-top:1px solid #d7d7d7;
+    border-bottom:1px solid #d7d7d7;
+    position: relative;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    padding-bottom: 5px;
+}
+.reports-view-index-index .item > a{
+    display: block;
+}
+.reports-view-index-index .item .h-title{
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+    padding-top: 6px;
+}
+.reports-view-index-index .item .type{
+    display: block;
+    color: #666;
+    font-size: 14px;
+}
+.reports-view-index-index .item .vline{
+    border-right:1px solid #d7d7d7;
+}
+
+.reports-view-index-index .item .type >em{
+    margin-left: 0px;
+    font-style: normal;
+}
+
+.reports-view-index-index .map-box{
+    background-color: #fff;
+    height: 260px;
+    width:100%;
+    padding: 15px 10px 25px 10px;
+}
+
+.reports-view-index-index .arr{
+    background: url("./images/arrow_right.png") no-repeat center;
+    background-size: 23px auto;
+    width:23px;
+    height:23px;
+    position: absolute;
+    right:5px;
+    top:50%;
+    margin-top: -11px;
+}
+
+.reports-view-index-index .goRealtime{
+    position: fixed;
+    bottom: 20px;
+    right:20px;
+    height:50px;
+    width:50px;
+    border-radius:50px;
+}
+.reports-view-index-index .goRealtime span{
+    background: url("./images/logo.png") no-repeat center;
+    height: 50px;
+    width: 50px;
+    display: block;
+    background-size: 47px auto;
+}
+
+.reports-view-index-index .notice-detail{
+    position: relative;
+    background-color: rgba(255,255,255,.9);
+    margin: -175px auto 0;
+    width: 90%;
+    height: 350px;
+    top: 50%;
+    border-radius: 4px;
+    padding: 15px 10px 10px;
+    box-shadow: 2px 5px 5px rgba(0,0,0,.12);
+}
+.reports-view-index-index .notice-detail .title{
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #d7d7d7;
+    padding-bottom: 13px;
+}
+.reports-view-index-index .notice-detail .detail{
+    line-height: 150%;
+    overflow: auto;
+    height: 250px;
+}
+.reports-view-index-index .notice-detail .detail img{
+     width:100%;
+}
+
+.reports-view-index-index .footer-bar{
+    margin-left: -2%;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.reports-view-index-index .footer-bar a{
+    width: 60%;
+    display: inline-block;
+    background-color: #ddd;
+    text-align: center;
+    padding: 15px;
+    float: left;
+    margin-left: 2%;
+    font-size: 16px;
+    color: #333333;
+}
+.reports-view-index-index .footer-bar a.bg3{
+    background-color: rgba(255,204,0,0.4);
+}
+.reports-view-index-index .opDate{
+    background-color: #fff;
+    min-height: 200px;
+    padding: 10px;
+    font-size: 12px;
+}
+.reports-view-index-index .opDate .date{
+    margin-bottom: 10px;
+}
+.row{
+    overflow: hidden;
+}
+.col-1,.col-2,
+.col-3,.col-4,
+.col-5,.col-6,
+.col-5,.col-6,
+.col-7,.col-8,
+.col-9,.col-10,
+.col-11,.col-12{
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.col-6 {
+    width: 50%;
+}
+.col-4{
+    width: 33.33333333%;
+}
+
+.f-red{color: #ff0000}
+
+.mint-popup-bottom{
+	width: 100%;
+}
+.select-box .mui-table-view-cell:after {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    height: 1px;
+    content: '';
+    border-bottom: 1px dotted #d7d7d7;
+    background-color: #d7d7d7;
+}
+.select-box{
+	height: 180px;
+  overflow: auto;
+}
+.select-box .mui-table-view-cell {
+    padding: 7px 15px;
+    font-size: 14px;
+}
+.opDate h3{
+	font-size: 1.17em;
+}
+.ul_box {
+    padding: 10px 10px 0;
+    height: 30px;
+}
+.reports-view-index-index .secondary-li li {
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 12px;
+    line-height: 2;
+    color: #333;
+}
+.reports-view-index-index .ol {
+    width: 40%;
+    text-align: left;
+}
+.reports-view-index-index .oc {
+    width: 30%;
+    text-align: center;
+}
+.reports-view-index-index .or {
+    width: 30%;
+    text-align: right;
+}
+.reports-view-index-index .secondary-li li .saleval {
+    box-sizing: border-box;
+    position: relative;
+    font-size: 12px;
+    line-height: 2;
+    color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
