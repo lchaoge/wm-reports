@@ -264,10 +264,11 @@
     line-height: 2;
     color: #666;
 }
-
-
-
-
+.echars-box{
+	  height: 260px;
+    width: 100%;
+    padding: 15px 10px 25px;
+}
 
 
 

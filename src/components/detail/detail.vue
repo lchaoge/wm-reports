@@ -1,145 +1,280 @@
 <template>
-  <div class="page-popup">
-    <h1 class="page-title">Popup</h1>
-    <div class="page-popup-wrapper">
-      <mt-button @click.native="popupVisible1 = true" size="large" ref="button">中部弹出 popup</mt-button>
-      <mt-button @click.native="popupVisible2 = true" size="large">上侧弹出 popup</mt-button>
-      <mt-button @click.native="popupVisible3 = true" size="large">右侧弹出 popup</mt-button>
-      <mt-button @click.native="popupVisible4 = true" size="large">下侧弹出 popup</mt-button>
-    </div>
-    <mt-popup v-model="popupVisible1" popup-transition="popup-fade" class="mint-popup-1" :style="{ top: buttonBottom + 10 + 'px' }">
-      <h1>popup</h1>
-      <p>/ ˈpɑpˌʌp /</p>
-      <p>n. 弹出式; [棒]内野飞球; 自动起跳式装置</p>
-      <p>adj. 弹起的; 有自动起跳装置的</p>
-    </mt-popup>
-    <mt-popup v-model="popupVisible2" position="top" class="mint-popup-2" :modal="false">
-      <p>更新成功</p>
-    </mt-popup>
-    <mt-popup v-model="popupVisible3" position="right" class="mint-popup-3" :modal="false">
-      <mt-button @click.native="popupVisible3 = false" size="large" type="primary">关闭 popup</mt-button>
-    </mt-popup>
-    <mt-popup v-model="popupVisible4" position="bottom" class="mint-popup-4">
-      <mt-picker :slots="dateSlots" @change="onDateChange" :visible-item-count="5" :show-toolbar="false"></mt-picker>
-    </mt-popup>
+  <div class="reports-view-detail-detail">
+  	<header id="header" class="mui-bar mui-bar-nav">
+			<div class="mui-title">
+				<div class="mui-segmented-control mui-segmented-control-primary">
+					<a v-for="item in pageData.topbar" class="mui-control-item" :class="{'mui-active':item.active}" @click="topbarEvt(item)">{{item.name}}</a>
+				</div>
+			</div>
+			<a class="mui-action-back mui-icon mui-icon-reload mui-pull-left" @click="reloadEvt"></a>
+			<router-link :to="{name:'indexLink'}" class="mui-icon mui-icon-home mui-pull-right"></router-link>
+  	</header>
+  	<div class="mui-content">
+	  	<mt-tab-container v-model="pageData.topbarActiveId">
+			  <mt-tab-container-item id="tab-container1">
+			   	<div class="box-hd">
+			   		<div class="datatime">
+			   			<span class="bit J_DptName">华北区,北超-采销线</span> 
+			   			<span class="J_DataTime time">销售日 :2018.03.27</span>
+			   		</div>
+			   	</div>
+			   	<div class="mui-slider">
+			   		<EasyScrollbar :barOption="myBarOption">
+			   			<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+								<a class="mui-control-item" v-for="item in pageData.subTab" :class="{'mui-active':item.active}" @click="subTabEvt(item)">{{item.name}}</a>
+							</div>
+						</EasyScrollbar>
+						<div class="mui-slider-group">
+							<mt-tab-container v-model="pageData.subTabActiveId">
+								<!--采销线-->
+							  <mt-tab-container-item id="tab1">
+							  	<ul class="mui-table-view" style="margin-top: 1px;">
+										<li class="mui-table-view-cell mui-collapse">
+											<a class="mui-navigate-right">
+												  销售 交易 客单 综毛 
+												<mt-badge type="primary">(北超-营运线)</mt-badge>
+											</a>
+											<div class="mui-collapse-content">
+												<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+											</div>
+										</li>
+										<li class="mui-table-view-cell mui-collapse">
+											<a class="mui-navigate-right">图片轮播</a>
+											<div class="mui-collapse-content">
+										<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+											</div>
+										</li>
+										<li class="mui-table-view-cell mui-collapse">
+											<a class="mui-navigate-right">文字排版</a>
+											<div class="mui-collapse-content">
+												<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+											</div>
+										</li>
+									</ul>
+							  </mt-tab-container-item>
+							  <!--营运线-->
+							  <mt-tab-container-item id="tab2">
+2<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+							  </mt-tab-container-item>
+							  <!--供商-->
+							  <mt-tab-container-item id="tab3">
+3<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+							  </mt-tab-container-item>
+							  <!--新零售-->
+							  <mt-tab-container-item id="tab4">
+4<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+							  </mt-tab-container-item>
+							  <!--购物中心-->
+							  <mt-tab-container-item id="tab5">
+5<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+							  </mt-tab-container-item>
+							  <!--团购-->
+							  <mt-tab-container-item id="tab6">
+6<h1>h1. Heading</h1>
+												<h2>h2. Heading</h2>
+												<h3>h3. Heading</h3>
+												<h4>h4. Heading</h4>
+												<h5>h5. Heading</h5>
+												<h6>h6. Heading</h6>
+												<p>
+													p. 目前最接近原生App效果的框架。
+												</p>
+							  </mt-tab-container-item>
+							</mt-tab-container>
+						
+						</div>
+			   	</div>
+			  </mt-tab-container-item>
+			  <mt-tab-container-item id="tab-container2">
+			    <div class="box-hd">
+			    	<div class="datatime">
+			    		<span class="bit J_DptName">华北区,北超-采销线</span> 
+			    		<span class="J_DataTime time">更新:2018.03.28 17:25</span>
+			    	</div>
+			    </div>
+			    
+			    
+			  </mt-tab-container-item>
+			</mt-tab-container>	
+  	</div>
   </div>
 </template>
 
-<style>
-  @component-namespace page {
-    @component popup {
-      @descendent wrapper {
-        padding: 0 20px;
-        position: absolute 50% * * *;
-        width: 100%;
-        transform: translateY(-50%);
-        button:not(:last-child) {
-          margin-bottom: 20px;
-        }
-      }
-      .mint-popup-1 {
-        width: 200px;
-        border-radius: 8px;
-        padding: 10px;
-        transform: translate(-50%, 0);
-        h1 {
-          font-size: 20px;
-          color: #26a2ff;
-        }
-        p {
-          margin-bottom: 10px;
-        }
-      }
-      .mint-popup-1::before {
-        triangle: 10px top #fff;
-        content: '';
-        position: absolute;
-        top: -20px;
-        right: 50px;
-      }
-      .mint-popup-2 {
-        width: 100%;
-        height: 50px;
-        text-align: center;
-        background-color: rgba(0,0,0,.7);
-        backface-visibility: hidden;
-      }
-      .mint-popup-2 p {
-        line-height: 50px;
-        color: #fff;
-      }
-      .mint-popup-3 {
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-      }
-      .mint-popup-3 .mint-button {
-        position: absolute;
-        width: 90%;
-        top: 50%;
-        left: 5%;
-        transform: translateY(-50%);
-      }
-      .mint-popup-4 {
-        width: 100%;
-        .picker-slot-wrapper, .picker-item {
-          backface-visibility: hidden;
-        }
-      }
-    }
-  }
-</style>
-
-<script type="text/babel">
-	import Vue from 'vue'
-	import { Popup } from 'mint-ui';
-	Vue.component(Popup.name, Popup);
-	import { Button } from 'mint-ui';
-	Vue.component(Button.name, Button);
-  export default {
-    data() {
-      return {
-        popupVisible1: false,
-        popupVisible2: false,
-        popupVisible3: false,
-        popupVisible4: false,
-        buttonBottom: 0,
-        dateSlots: [
-          {
-            flex: 1,
-            values: ['2016-01', '2016-02', '2016-03', '2016-04', '2016-05', '2016-06'],
-            className: 'slot1',
-            textAlign: 'right'
-          }, {
-            divider: true,
-            content: '-',
-            className: 'slot2'
-          }, {
-            flex: 1,
-            values: ['2016-01', '2016-02', '2016-03', '2016-04', '2016-05', '2016-06'],
-            className: 'slot3',
-            textAlign: 'left'
-          }
-        ]
-      };
-    },
-    watch: {
-      popupVisible2(val) {
-        if (val) {
-          setTimeout(() => {
-            this.popupVisible2 = false;
-          }, 2000);
-        }
-      }
-    },
-    methods: {
-      onDateChange(picker, values) {
-        if (values[0] > values[1]) {
-          picker.setSlotValue(1, values[0]);
-        }
-        this.dateStart = values[0];
-        this.dateEnd = values[1];
-      }
-    },
-  };
+<script>
+	export default{
+		data(){
+			return {
+				myBarOption:{
+				  barColor:"#000",   //滚动条颜色
+				  barWidth:6,           //滚动条宽度
+				  railColor:"#eee",     //导轨颜色
+				  barMarginRight:0,     //垂直滚动条距离整个容器右侧距离单位（px）
+				  barMaginBottom:0,     //水平滚动条距离底部距离单位（px)
+				  barOpacityMin:0.3,      //滚动条非激活状态下的透明度
+				  zIndex:"auto",        //滚动条z-Index
+				  autohidemode:true,     //自动隐藏模式
+				  horizrailenabled:false//是否显示水平滚动条
+				},
+				pageData:{
+					topbar:[
+						{
+							active:true,
+							name:"业绩",
+							id:"tab-container1"
+						},
+						{
+							active:false,
+							name:"实时",
+							id:"tab-container2"
+						}
+					],
+					topbarActiveId:"", //业绩or实时
+					subTab:[
+						{
+							active:true,
+							name:"采销",
+							id:"tab1"
+						},
+						{
+							active:false,
+							name:"营运线",
+							id:"tab2"
+						},
+						{
+							active:false,
+							name:"供商",
+							id:"tab3"
+						},
+						{
+							active:false,
+							name:"新零售",
+							id:"tab4"
+						},
+						{
+							active:false,
+							name:"采购中心",
+							id:"tab5"
+						},
+						{
+							active:false,
+							name:"团购",
+							id:"tab6"
+						}
+					],
+					subTabActiveId:""
+				},
+				
+			}
+		},
+		created(){
+			const that = this
+			this.pageData.topbar.filter((item)=>{
+				if(item.active){
+					that.pageData.topbarActiveId = item.id		
+				}
+			})
+			this.pageData.subTab.filter((item)=>{
+				if(item.active){
+					that.pageData.subTabActiveId = item.id		
+				}
+			})
+		},
+		methods:{
+			/*
+			 * tab点击事件 
+			 * 业绩or实时
+			 */
+			topbarEvt(el){
+				const that = this
+				this.pageData.topbar.filter((item)=>{
+					if(item.id==el.id){
+						item.active = true
+						that.pageData.topbarActiveId = item.id		
+					}else{
+						item.active = false
+					}
+				})
+			},
+			/*
+			 * tab点击事件
+			 */
+			subTabEvt(el){
+				const that = this
+				this.pageData.subTab.filter((item)=>{
+					if(item.id==el.id){
+						item.active = true
+						that.pageData.subTabActiveId = item.id		
+					}else{
+						item.active = false
+					}
+				})
+			},
+			/*
+			 * 刷新页面
+			 */
+			reloadEvt(){
+				this.$router.go(0)
+			}
+		}
+	}
 </script>
+
+<style>
+	@import url("detail.css")
+</style>

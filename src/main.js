@@ -20,8 +20,12 @@ var router = new VueRouter({
 
 Vue.config.productionTip = false
 
-import ECharts from 'vue-echarts/components/ECharts.vue';
-Vue.component('chart', ECharts);
+import EasyScroll from 'easyscroll'
+Vue.use(EasyScroll)
+
+// 引入echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts 
 
 /* eslint-disable no-new */
 new Vue({

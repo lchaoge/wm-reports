@@ -135,7 +135,7 @@
 </template>
 
 <script>
-	import Echars from '../common/echars/echars'	
+	import Echars from '../common/echarts/echarts'	
 	export default{
 		data(){
 			return {

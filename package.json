@@ -10,7 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "easyscroll": "^1.0.1",
     "echarts": "^4.0.4",
+    "jquery": "^2.2.3",
     "mint-ui": "^2.2.13",
     "vue": "^2.5.2",
     "vue-echarts": "^3.0.5",
