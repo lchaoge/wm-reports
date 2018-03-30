@@ -150,13 +150,36 @@
 		components:{
 			'wm-echars':Echars
 		},
+		created(){
+			this.initFunc()
+		},
 		methods:{
 			selectBoxEvt(){
 				this.selectBox.popupVisible = true
 			},
 			opDateBoxEvt(){
 				this.opDateBox.popupVisible = true
+			},
+			initFunc(){
+				fetch('/apis/gateway/performance/index',{
+      		method:'get',
+      		headers:{
+      			"Content-Type":"application/json"
+      		},
+      		body:JSON.stringify({
+      			type:'dpt',
+      			code:'Op_999',
+      			mandt:'300'
+      		})
+      	}).then(res=>{
+      		console.log(res)
+      		return res.json()
+      	}).then(res=>{
+      		console.log(res)
+      	}).catch(err=>console.log("朝歌"+err))
 			}
+			
+			
 		}
 	}
 </script>
