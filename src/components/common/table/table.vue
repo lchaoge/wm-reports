@@ -1,6 +1,6 @@
 <template>
 	<div class="tableBody">
-		<table class="dataTable dataTables" cellspacing="0" width="100%">
+		<table :id="wmtableId" class="dataTable" cellspacing="0" width="100%">
       <thead>
           <tr>
               <th rowspan="2">采销部类</th>
@@ -17,7 +17,7 @@
       </thead>
       <tbody>
       	 <!--class="level2"-->
-          <tr v-for="item in tableBody"  @click="detailEvt(item)">
+          <tr v-for="item in tablebodyList"  @click="detailEvt(item)">
               <td class="drillable">{{item.td1}}</td>
               <td class="danger">{{item.td2}}</td>
               <td>{{item.td3}}</td>
@@ -34,12 +34,17 @@
 <script>
 	export default{
 		props:[
-			'tablebodyList'
+			'tablebodyList',
+			'wmtableId'
 		],
 		computed:{
 			tableBody(){
 				this.tablebodyList
+			},
+			tableId(){
+				this.wmtableId
 			}
+			
 		},
 		data(){
 			return {
@@ -63,11 +68,10 @@
 			    "bScrollCollapse":true,
 			    "sScrollXInner":"150%"
 				},
-				
 			}
 		},
 		mounted(){
-			var table = $('.dataTables').DataTable(this.datatables_options);
+			var table = $('#'+this.wmtableId).DataTable(this.datatables_options);
 			new $.fn.dataTable.FixedColumns(table);
 		},
 		methods: {
@@ -79,6 +83,9 @@
 </script>
 
 <style>
+	.tableBody {
+		height: 573px;
+	}
 	table.DTFC_Cloned thead,
 	table.DTFC_Cloned tfoot {
 	  background-color: white;
@@ -621,5 +628,8 @@
 	}
 	 table.dataTable tbody td.danger {
 	    color: red;
+	}
+	.dataTables_wrapper.no-footer .dataTables_scrollBody{
+		border-bottom: 1px solid #D7D7D7;
 	}
 </style>

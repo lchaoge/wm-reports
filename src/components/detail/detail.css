@@ -116,3 +116,10 @@
 	font-size: 12px;
 	margin-left: 10px;
 }
+
+.mui-table-view-cell.mui-collapse .mui-collapse-content{
+	padding: 0;
+}
+.easy-scrollbar{
+	border-bottom: 1px solid #d7d7d7;
+}
